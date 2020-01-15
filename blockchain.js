@@ -3,6 +3,7 @@ const Block = require('./block');
 class Blockchain {
 	constructor() {
 		this.chain = [this.createGenesis()];
+		this.diffclty = 3;
 	}
 
 	createGenesis(){
@@ -19,6 +20,7 @@ class Blockchain {
 		newblk.prevhash = this.getLast().hash;
 		newblk.index = this.getLast().index+1;
 		newblk.hash = newblk.calculateHash();
+		newblk.mineblk(this.diffclty);
 		this.chain.push(newblk);
 	}
 
@@ -42,7 +44,7 @@ class Blockchain {
 	}
 }
 
-let blocks2add = 7000;
+let blocks2add = 20;
 const polychain = new Blockchain();
 
 for (i=0; i<blocks2add; i++) {

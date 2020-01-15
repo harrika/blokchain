@@ -15,7 +15,7 @@ class Block {
 			this.nonce++;
 			this.hash = this.calculateHash();
 		}
-		console.log(`Block ${this.index+1} mined: ${this.hash}`)
+		console.log(`Block ${this.index} mined: ${this.hash}`)
 
 	}
 
