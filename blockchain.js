@@ -19,7 +19,7 @@ class Blockchain {
 	addNew(newblk) {
 		newblk.prevhash = this.getLast().hash;
 		newblk.index = this.getLast().index+1;
-		newblk.hash = newblk.calculateHash();
+		//newblk.hash = newblk.calculateHash();
 		newblk.mineblk(this.diffclty);
 		this.chain.push(newblk);
 	}
@@ -39,16 +39,16 @@ class Blockchain {
 		
 			}
 		}
-		console.log("Block and prev-hash integrities passed");
+		console.log("#####%%%*********%%%%%#######*********Block and prev-hash integrities passed");
 		return true;
 	}
 }
 
-let blocks2add = 20;
+let blocks2add = 35;
 const polychain = new Blockchain();
 
 for (i=0; i<blocks2add; i++) {
-	polychain.addNew(new Block({sender: "polychain", reciver: "tube", message: `block ${polychain.chain.length} added`}));
+	polychain.addNew(new Block({sender: "harrika-chain", reciver: "youtuber", message: `block ${polychain.chain.length} added`}));
 }
 
 polychain.chain.forEach((blk) => {
