@@ -44,7 +44,7 @@ class Blockchain {
 	}
 }
 
-let blocks2add = 35;
+let blocks2add = 55;
 const polychain = new Blockchain();
 
 for (i=0; i<blocks2add; i++) {
@@ -52,11 +52,12 @@ for (i=0; i<blocks2add; i++) {
 }
 
 polychain.chain.forEach((blk) => {
-	console.log(blk);
+	// console.log(blk);
+	console.log(blk.hash);
 });
 
 // inserting alien data to test validity check
-// polychain.chain[400].data = "this is different now is it?"
+// polychain.chain[30].data = "this is different now is it?"
 
 
 polychain.isValid();
